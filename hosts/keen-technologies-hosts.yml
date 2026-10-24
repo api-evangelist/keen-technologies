@@ -1,0 +1,49 @@
+generated: '2026-10-24'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 2
+  other_domain: 1
+  platform: 0
+  roles:
+  - api
+  - other
+  - website
+hosts:
+- host: api.keenagi.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: keenagi.com
+  role: api
+  relation: own
+- host: keen.io
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - docs
+  registrable_domain: keen.io
+  role: other
+  relation: other-domain
+- host: keenagi.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - TermsOfService
+  - PrivacyPolicy
+  - Website
+  serves:
+  - cdn
+  - hosting
+  vendor: fastly
+  registrable_domain: keenagi.com
+  role: website
+  relation: own

@@ -1,25 +1,76 @@
 aid: keen-technologies
+
 name: Keen Technologies
-description: 'Keen Technologies is a company surfaced via the API Evangelist harvest backlog (source:
-  vc-portfolio; backed by sequoia-capital) and added to the network as a stub for full-pipeline profiling.'
+
+description: Keen Technologies is an AI research and development company focused on building artificial general intelligence (AGI). The firm runs
+  a public website keenagi.com that showcases its research projects, team, and mission to advance AI capabilities responsibly. It is backed by
+  Sequoia Capital and listed in the API Evangelist harvest backlog.
+
 url: https://raw.githubusercontent.com/api-evangelist/keen-technologies/refs/heads/main/apis.yml
+
 x-type: company
+
+image: https://keenagi.com/icons/keen-logo.svg
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-23'
+
 modified: '2026-10-23'
+
 tags:
 - Company
-apis: []
+- AI
+- Research
+- AGI
+- Technology
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- sequoia-capital
+
 common:
+- type: Hosts
+  url: hosts/keen-technologies-hosts.yml
+- type: Vendors
+  url: vendors/keen-technologies-vendors.yml
+- type: TermsOfService
+  url: https://keenagi.com/terms/
+- type: PrivacyPolicy
+  url: https://keenagi.com/privacy/
+- type: DomainSecurity
+  url: security/keen-technologies-domain-security.yml
 - type: Website
   url: https://keenagi.com/
+
+apis:
+- name: Keen Event Streaming API
+  description: Keen provides an Event Streaming API for collecting, storing, and querying event data.
+  humanURL: https://keen.io/docs/api/
+  baseURL: null
+  aid: keen-technologies:keen-event-streaming-api
+
+x-backed-by:
+- sequoia-capital
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: API documentation pages are rendered via JavaScript and no OpenAPI spec is publicly accessible.
+  evidence:
+  - url: https://keen.io/docs/api/
+    status: 200
+  checked: '2026-10-23'
+x-enrichment:
+  date: '2026-10-23'
+  status: enriched
+  artifacts_added: 8
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
